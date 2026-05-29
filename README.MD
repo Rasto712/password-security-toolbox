@@ -62,6 +62,22 @@ If you use this concept in your own application, keep these rules in mind:
 
 ---
 
+## PasswordGenerator.py
+
+Generates a random password using uppercase letters, lowercase letters, digits, and punctuation. If the requested length is shorter than 8 characters, the generator automatically uses a safer minimum length.
+
+This file can be used to create strong example passwords, and it also includes optional hooks to assess the generated password strength and brute-force resistance.
+
+---
+
+## PersonalPasswordRiskAnalyzer.py
+
+Analyzes a password for exposure of personal information. It checks whether the password contains values such as a name, email username, phone number digits, birth date parts, or address components.
+
+The analyzer returns a risk score, a risk level (Low/Moderate/High), and warnings to help identify why a password may be more vulnerable because of personal data.
+
+---
+
 ## PasswordStrengthAssessing.py
 
 Scores the strength of a password.

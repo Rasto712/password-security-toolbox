@@ -4,6 +4,8 @@ import hmac
 
 
 def hash_password(password, pepper="", iterations=600_000):
+    """Hash a password using PBKDF2 with SHA-256, salt, and optional pepper."""
+    # Generate a cryptographically secure random salt for this password.
     salt = secrets.token_hex(16)
 
     combined_password = password + pepper
@@ -15,6 +17,7 @@ def hash_password(password, pepper="", iterations=600_000):
         iterations
     ).hex()
 
+    # Return the hash details needed for password verification later.
     return {
         "hash": password_hash,
         "salt": salt,
